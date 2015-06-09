@@ -11,14 +11,15 @@ class Parser : public QObject
 {
     Q_OBJECT
 private:
-    bool validateSources(CSVObject csv);
-    QVector<QStringList>* csvToMatrix(CSVObject csv);
-    void prepareSources(QVector<QStringList> *matrix);
+    static QVector<QStringList>* csvToMatrix(CSVObject* csv, Configuration* conf);
+    static bool validateSources(QVector<QStringList>* csvMatrix, Configuration* conf);
+    static void prepareSources(QVector<QStringList>* csvMatrix, HTMLObject& html, Configuration* conf);
+    static QString decoratedList(QVector<QStringList>* sourcesList, Configuration *conf);
 
 public:
     explicit Parser(QObject *parent = 0);
 
-    static bool parse(CSVObject csv, HTMLObject& html, Configuration* conf);
+    static bool parse(CSVObject* csv, HTMLObject& html, Configuration* conf);
 
 signals:
 
