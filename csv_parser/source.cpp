@@ -1,6 +1,7 @@
 #include "source.h"
 
-Source::Source()
+Source::Source(Configuration::SourceType type_, QVector<QStringList> *staticSetsOfFields_,
+               int selectedSetOfFields)
 {
 
 }
