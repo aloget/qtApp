@@ -13,8 +13,22 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    parsersession.cpp \
+    configuration.cpp \
+    parser.cpp \
+    csvobject.cpp \
+    htmlobject.cpp \
+    source.cpp \
+    dbhelper.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    parsersession.h \
+    configuration.h \
+    parser.h \
+    csvobject.h \
+    htmlobject.h \
+    source.h \
+    dbhelper.h
 
 FORMS    += mainwindow.ui
