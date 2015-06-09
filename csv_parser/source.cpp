@@ -6,3 +6,10 @@ Source::Source(SourceType type_, QVector<QStringList> *staticSetsOfFields_,
 
 }
 
+QVector<QStringList>* Source::getStaticSetsOfFields() const {
+    return staticSetsOfFields;
+}
+
+int Source::getSelectedSetOfFields() const {
+    return selectedSetOfFields;
+}

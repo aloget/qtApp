@@ -8,8 +8,8 @@ class Configuration : public QObject
 {
     Q_OBJECT
 private:
-    static char separator;
-    static QString htmlSkeleton;//begin list after <body>
+    char separator;
+    QString htmlSkeleton;//begin list after <body>
     QVector<Source>* sources;
 
 

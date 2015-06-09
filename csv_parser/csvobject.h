@@ -20,6 +20,8 @@ public:
     //and if it is valid, initializes stringInterpretation with string,
     //otherwise null
 
+    QString getStringInterpretation() const;
+
 signals:
 
 public slots:
