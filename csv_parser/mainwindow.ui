@@ -6,15 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>715</width>
-    <height>136</height>
+    <width>716</width>
+    <height>135</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QLineEdit" name="lineEdit">
+   <widget class="QLineEdit" name="select_csv_Edit">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -30,7 +30,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="select_csv_Button">
     <property name="geometry">
      <rect>
       <x>220</x>
@@ -56,7 +56,7 @@
      <string>Директория сохранения html</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="history_Button">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -69,7 +69,7 @@
      <string>История</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_2">
+   <widget class="QLineEdit" name="select_directory_for_html_Edit">
     <property name="geometry">
      <rect>
       <x>340</x>
@@ -85,7 +85,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_4">
+   <widget class="QPushButton" name="convert_Button">
     <property name="geometry">
      <rect>
       <x>570</x>
@@ -104,7 +104,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>715</width>
+     <width>716</width>
      <height>21</height>
     </rect>
    </property>
