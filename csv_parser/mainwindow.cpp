@@ -2,6 +2,9 @@
 #include "ui_mainwindow.h"
 #include "qstring.h"
 #include "qfiledialog.h"
+#include "history.h"
+#include "convert.h"
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -27,4 +30,23 @@ void MainWindow::Select_directory()
 {
     QString Select_directory = QFileDialog::getExistingDirectory(0, "Directory Dialog", "");
     ui->select_directory_Edit->setText(Select_directory);
+}
+
+void MainWindow::Open_history()
+{
+
+}
+
+void MainWindow::on_history_Button_clicked()
+{
+    History history;
+    history.setModal(true);
+    history.exec();
+}
+
+void MainWindow::on_convert_Button_clicked()
+{
+    convert Convert;
+    Convert.setModal(true);
+    Convert.exec();
 }

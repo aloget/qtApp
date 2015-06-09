@@ -20,6 +20,10 @@ private:
 public slots:
     void Select_csv();
     void Select_directory();
+    void Open_history();
+private slots:
+    void on_history_Button_clicked();
+    void on_convert_Button_clicked();
 };
 
 
