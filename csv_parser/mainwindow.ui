@@ -43,7 +43,7 @@
      <string>Выбрать csv</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="select_directory_Button">
     <property name="geometry">
      <rect>
       <x>540</x>
@@ -69,7 +69,7 @@
      <string>История</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="select_directory_for_html_Edit">
+   <widget class="QLineEdit" name="select_directory_Edit">
     <property name="geometry">
      <rect>
       <x>340</x>

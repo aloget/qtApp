@@ -17,6 +17,10 @@ public:
 
 private:
     Ui::MainWindow *ui;
+public slots:
+    void Select_csv();
+    void Select_directory();
 };
+
 
 #endif // MAINWINDOW_H
