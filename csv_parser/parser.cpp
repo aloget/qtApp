@@ -43,24 +43,27 @@ QVector<QStringList>* Parser::csvToMatrix(CSVObject* csv, Configuration* conf){
     QString csvString = csv->getStringInterpretation();
     QStringList sourcesList = csvString.split("\n", QString::SkipEmptyParts);
 
-    QVector<QStringList> retMatrix(sourcesList.count());
+    QVector<QStringList> *retMatrix = new QVector <QStringList> (sourcesList.count());
 
     foreach (QString sourceInfo, sourcesList) {
         char separator = conf->getSeparator();
         QStringList sourceInfoList = sourceInfo.split(QString("%1").arg(separator), QString::SkipEmptyParts);
-        retMatrix.append(sourceInfoList);
+        retMatrix->append(sourceInfoList);
     }
-    return &retMatrix;
+    return retMatrix;
 }
 
 void Parser::prepareSources(QVector<QStringList>* csvMatrix, HTMLObject& html,
                             Configuration* conf) {
-
+//обработка источников по госту
+//оформление списка в html-разметке
+//объединение с глобальным html-ником (впихнуть в htmlSkeleton после подстроки <body>)
 
 }
 
 QString Parser::decoratedList(QVector<QStringList>* sourcesList,
                               Configuration* conf) {
+    //оформление списка в html-разметке
     return QString();
 }
 
