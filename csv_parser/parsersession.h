@@ -13,7 +13,6 @@ class ParserSession : public QObject
     Q_OBJECT
 
 private:
-
     Configuration *configuration;
     CSVObject *csv;
     HTMLObject *html;

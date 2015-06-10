@@ -8,7 +8,7 @@ class Configuration : public QObject
 {
     Q_OBJECT
 private:
-    char separator;
+    QString separator;
     QString htmlUpperPart;
     QString htmlLowerPart;
     QVector<Source>* sources;
@@ -28,7 +28,7 @@ public:
     QVector<Source>* getSources() const;
     QString getHTMLUpperPart() const;
     QString getHTMLLowerPart() const;
-    char getSeparator() const;
+    QString getSeparator() const;
 
 
 

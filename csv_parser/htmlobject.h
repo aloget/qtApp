@@ -15,6 +15,7 @@ public:
     HTMLObject(QString fileDirectory, QObject *parent = 0);
 
     void setHTMLString(QString htmlString);
+    QString getHTMLString() const;
     bool writeFile();
 signals:
 

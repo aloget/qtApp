@@ -12,12 +12,14 @@ public:
         BOOK, ARTICLE, WEB
     };
 
+    Source();
     Source(SourceType type_);
 
 //    QVector<QStringList>* getStaticSetsOfFields() const;
 //    int getSelectedSetOfFields() const;
 
     int getMinNumberOfFields() const;
+    void setMinNumberOfFields(int);
 
 private:
     SourceType type;
