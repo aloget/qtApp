@@ -2,28 +2,31 @@
 #define SOURCE_H
 
 #include <QObject>
+#include <QStringList>
 
 class Source
 {
 
 public:
     enum SourceType {
-        BOOK, MULTIPART_BOOK, ARTICLE, WEB
+        BOOK, ARTICLE, WEB
     };
 
-    Source(SourceType type_, QVector<QStringList> *staticSetsOfFields_,
-           int selectedSetOfFields);
+    Source(SourceType type_);
 
-    QVector<QStringList>* getStaticSetsOfFields() const;
-    int getSelectedSetOfFields() const;
+//    QVector<QStringList>* getStaticSetsOfFields() const;
+//    int getSelectedSetOfFields() const;
+
+    int getMinNumberOfFields() const;
 
 private:
     SourceType type;
-    QVector<QStringList> *staticSetsOfFields;
-    int selectedSetOfFields;
+    int minNumberOfFields;//static
 
-    //need to implement ordering as well
 
+//    QVector<QStringList> *staticSetsOfFields;
+//    int selectedSetOfFields;
+//    int selectedOrder;
 
 
 };

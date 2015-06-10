@@ -12,8 +12,9 @@ private:
 
 public:
     explicit HTMLObject(QObject *parent = 0);
-    HTMLObject(QString fileDirectory, QString HTMLString, QObject *parent = 0);
+    HTMLObject(QString fileDirectory, QObject *parent = 0);
 
+    void setHTMLString(QString htmlString);
     bool writeFile();
 signals:
 

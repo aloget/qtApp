@@ -20,7 +20,8 @@ SOURCES += main.cpp\
     csvobject.cpp \
     htmlobject.cpp \
     source.cpp \
-    dbhelper.cpp
+    dbhelper.cpp \
+    sourcepreparator.cpp
 
 HEADERS  += mainwindow.h \
     parsersession.h \
@@ -29,6 +30,7 @@ HEADERS  += mainwindow.h \
     csvobject.h \
     htmlobject.h \
     source.h \
-    dbhelper.h
+    dbhelper.h \
+    sourcepreparator.h
 
 FORMS    += mainwindow.ui

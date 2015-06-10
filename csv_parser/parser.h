@@ -21,7 +21,8 @@ private:
     static QVector<QStringList>* csvToMatrix(CSVObject* csv, Configuration* conf);
     static bool validateSources(QVector<QStringList>* csvMatrix, Configuration* conf);
     static void prepareSources(QVector<QStringList>* csvMatrix, HTMLObject& html, Configuration* conf);
-    static QString decoratedList(QVector<QStringList>* sourcesList, Configuration *conf);
+    static QVector<QStringList>* gostPrepareSources(QVector<QStringList>* sourcesList);
+    static QString decoratedList(QVector<QStringList>* sourcesList);
 
 };
 

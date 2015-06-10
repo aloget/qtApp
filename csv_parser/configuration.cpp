@@ -13,6 +13,11 @@ QVector<Source>* Configuration::getSources() const {
     return sources;
 }
 
-QString Configuration::getHTMLSkeleton() const {
-    return htmlSkeleton;
+QString Configuration::getHTMLUpperPart() const {
+    return htmlUpperPart;
 }
+
+QString Configuration::getHTMLLowerPart() const {
+    return htmlLowerPart;
+}
+

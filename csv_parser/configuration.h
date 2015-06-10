@@ -9,7 +9,8 @@ class Configuration : public QObject
     Q_OBJECT
 private:
     char separator;
-    QString htmlSkeleton;//begin list after <body>
+    QString htmlUpperPart;
+    QString htmlLowerPart;
     QVector<Source>* sources;
 
 
@@ -25,7 +26,8 @@ public:
 //    void operator=(Configuration const&);
 
     QVector<Source>* getSources() const;
-    QString getHTMLSkeleton() const;
+    QString getHTMLUpperPart() const;
+    QString getHTMLLowerPart() const;
     char getSeparator() const;
 
 

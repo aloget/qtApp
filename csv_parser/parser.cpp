@@ -4,6 +4,8 @@
 #include <QStringList>
 #include <QVector>
 
+#include "sourcepreparator.h"
+
 Parser::Parser(QObject *parent) : QObject(parent)
 {
 
@@ -28,9 +30,9 @@ bool Parser::validateSources(QVector<QStringList>* csvMatrix,
         int sourceType = sourceInfo.at(0).toInt();
 
         Source source = conf->getSources()->at(sourceType);
-        int numOfFields = source.getStaticSetsOfFields()->at(source.getSelectedSetOfFields()).count();
+        int minNumOfFields = source.getMinNumberOfFields();
 
-        if (sourceInfo.count() != numOfFields) {
+        if (sourceInfo.count() < minNumOfFields) {
             return false;
         }
 
@@ -43,7 +45,7 @@ QVector<QStringList>* Parser::csvToMatrix(CSVObject* csv, Configuration* conf){
     QString csvString = csv->getStringInterpretation();
     QStringList sourcesList = csvString.split("\n", QString::SkipEmptyParts);
 
-    QVector<QStringList> *retMatrix = new QVector <QStringList> (sourcesList.count());
+    QVector<QStringList> *retMatrix = new QVector <QStringList> (sourcesList.count() + 1);
 
     foreach (QString sourceInfo, sourcesList) {
         char separator = conf->getSeparator();
@@ -56,14 +58,37 @@ QVector<QStringList>* Parser::csvToMatrix(CSVObject* csv, Configuration* conf){
 void Parser::prepareSources(QVector<QStringList>* csvMatrix, HTMLObject& html,
                             Configuration* conf) {
 //обработка источников по госту
+    QVector<QStringList>* preparedSources = gostPrepareSources(csvMatrix);
 //оформление списка в html-разметке
-//объединение с глобальным html-ником (впихнуть в htmlSkeleton после подстроки <body>)
-
+    QString listOfSources = decoratedList(preparedSources);
+//объединение с глобальным html-ником
+    QString result = conf->getHTMLUpperPart().append(listOfSources).append(conf->getHTMLLowerPart());
+    //запись в html объект получившейся строки
+    html.setHTMLString(result);
 }
 
-QString Parser::decoratedList(QVector<QStringList>* sourcesList,
-                              Configuration* conf) {
+QVector<QStringList>* Parser::gostPrepareSources(QVector<QStringList>* sourcesList) {
+    QVector<QStringList>* preparedSources = new QVector <QStringList> (sourcesList->count() + 1);
+    for (int i = 0; i < sourcesList->count(); i++) {
+        QStringList source = sourcesList->at(i);
+        QStringList preparedSource = SourcePreparator::prepareSource(source);
+        preparedSources->append(preparedSource);
+    }
+    return preparedSources;
+}
+
+
+QString Parser::decoratedList(QVector<QStringList>* sourcesList) {
     //оформление списка в html-разметке
-    return QString();
+    QString htmlList;
+    for (int i = 0; i < sourcesList->count(); i++) {
+        QStringList source = sourcesList->at(i);
+        QString author = source.at(0);
+        QString rest = source.at(1);
+        QString htmlSource = QString("<p><i>%1</i>%2</p>").arg(author, rest);
+        htmlList.append(htmlSource);
+    }
+
+    return htmlList;
 }
 
