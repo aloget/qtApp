@@ -9,7 +9,10 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.show();
 
-    ParserSession* ps = new ParserSession();
+    QString csvDir = "/Users/anna/Desktop/Untitled.csv";
+    QString htmlDir = "/Users/anna/Desktop/";
+
+    ParserSession* ps = new ParserSession(csvDir, htmlDir);
     if (ps->start()) {
         qDebug() << "success!";
     } else {

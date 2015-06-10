@@ -8,13 +8,16 @@ ParserSession::ParserSession(QObject *parent) : QObject(parent)
 }
 
 ParserSession::ParserSession(QString csvDir, QString htmlDir, QObject *parent) {
-    csv = new CSVObject(csvDir, this);
-    html = new HTMLObject(htmlDir, this);
     configuration = new Configuration(this);
+    csv = new CSVObject(csvDir, configuration, this);
+    html = new HTMLObject(htmlDir, this);
 }
 
 
 bool ParserSession::start(){
+    if (csv->getStringInterpretation() == NULL) {
+        return false;
+    }
     if (Parser::parse(csv, html, configuration)) {
         return true;
     }

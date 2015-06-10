@@ -17,11 +17,11 @@ bool Parser::parse(CSVObject* csv, HTMLObject* html, Configuration* conf) {
 
     if (validateSources(csvMatrix, conf)) {
         prepareSources(csvMatrix, html, conf);
-        return true;
+        if (html->writeFile()) {
+            return true;
+        }
     }
-    else {
-        return false;
-    }
+    return false;
 }
 
 bool Parser::validateSources(QVector<QStringList>* csvMatrix,
