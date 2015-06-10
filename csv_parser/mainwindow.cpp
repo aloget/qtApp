@@ -6,6 +6,7 @@
 #include "convert.h"
 #include "qmessagebox.h"
 #include "popup.h"
+#include <string>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -15,9 +16,9 @@ MainWindow::MainWindow(QWidget *parent) :
 
     QObject::connect(ui->select_csv_Button, SIGNAL(clicked()), this, SLOT(Select_csv()));
     QObject::connect(ui->select_directory_Button, SIGNAL(clicked()), this, SLOT(Select_directory()));
-    QObject::connect(ui->history_info, SIGNAL(clicked()), this, SLOT(Show_popup(header_history_popup,text_history_popup)));
-    QObject::connect(ui->csv_info, SIGNAL(clicked()), this, SLOT(Show_popup(header_csv_popup,text_csv_popup)));
-    QObject::connect(ui->html_info, SIGNAL(clicked()), this, SLOT(Show_popup(header_html_popup,text_html_popup)));
+    QObject::connect(ui->history_info, SIGNAL(clicked()), this, SLOT(Show_history_popup()));
+    QObject::connect(ui->csv_info, SIGNAL(clicked()), this, SLOT(Show_csv_popup()));
+    QObject::connect(ui->html_info, SIGNAL(clicked()), this, SLOT(Show_html_popup()));
 }
 
 MainWindow::~MainWindow()
@@ -51,7 +52,26 @@ void MainWindow::on_convert_Button_clicked()
     Convert.exec();
 }
 
-void MainWindow::Show_popup(char* header, char* text)
+void MainWindow::Show_csv_popup()
 {
-    QMessageBox::information(this,tr(header),tr(text));
+    QMessageBox::information(
+                this,
+                tr("CSV"),
+                tr("Нажмите на кнопку 'Выбрать csv', чтобы выбрать csv фаил который вы хотите преобразовать"));
+}
+
+void MainWindow::Show_html_popup()
+{
+    QMessageBox::information(
+                this,
+                tr("HTML директория"),
+                tr("Нажмите на кнопку 'Выбрать директорию html', чтобы выбрать место куда будет сохранен html"));
+}
+
+void MainWindow::Show_history_popup()
+{
+    QMessageBox::information(
+                this,
+                tr("История"),
+            tr("Здесь хронится история всех преобразованых файлов"));
 }
