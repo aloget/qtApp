@@ -10,6 +10,18 @@
     <height>135</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>716</width>
+    <height>135</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>716</width>
+    <height>135</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
@@ -46,7 +58,7 @@
    <widget class="QPushButton" name="select_directory_Button">
     <property name="geometry">
      <rect>
-      <x>540</x>
+      <x>546</x>
       <y>11</y>
       <width>171</width>
       <height>22</height>
@@ -72,7 +84,7 @@
    <widget class="QLineEdit" name="select_directory_Edit">
     <property name="geometry">
      <rect>
-      <x>340</x>
+      <x>346</x>
       <y>12</y>
       <width>201</width>
       <height>20</height>
@@ -96,6 +108,45 @@
     </property>
     <property name="text">
      <string>Преобразовать</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="csv_info">
+    <property name="geometry">
+     <rect>
+      <x>6</x>
+      <y>11</y>
+      <width>16</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="html_info">
+    <property name="geometry">
+     <rect>
+      <x>332</x>
+      <y>11</y>
+      <width>16</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>?</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="history_info">
+    <property name="geometry">
+     <rect>
+      <x>6</x>
+      <y>40</y>
+      <width>17</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>?</string>
     </property>
    </widget>
   </widget>
