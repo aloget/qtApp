@@ -8,6 +8,9 @@
 #include "popup.h"
 #include <string>
 
+#include <QDebug>
+#include "parsersession.h"
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -49,6 +52,17 @@ void MainWindow::on_convert_Button_clicked()
 {
     convert Convert;
     Convert.setModal(true);
+
+    QString csvDir = "/Users/anna/Desktop/Untitled.csv";
+    QString htmlDir = "/Users/anna/Desktop/";
+
+    ParserSession* ps = new ParserSession(csvDir, htmlDir);
+    if (ps->start()) {
+        qDebug() << "success!";
+    } else {
+        qDebug() << "failure!";
+    }
+
     Convert.exec();
 }
 
@@ -57,7 +71,11 @@ void MainWindow::Show_csv_popup()
     QMessageBox::information(
                 this,
                 tr("CSV"),
-                tr("Источники в файле .csv должны быть оформлены следующим образом:\n1. Для книг: формат “0;Автор(ы);Название;Место издания;Издательство;Год издания.\n'2. Для статей: “1;Автор(ы);Название статьи;Название источника;Год выпуска;Номер выпуска;Диапазон стр.”\n3. Для URL: “2;Автор(ы);Название статьи;Год публикации;День и месяц прописью;Название ресурса;URL;Дата обращения”.\n Если автор зарубежный, укажите оригинальное написание его имени через “/“."));
+                tr("Источники в файле .csv должны быть оформлены следующим образом:\n"
+                   "1. Для книг: формат “0;Автор(ы);Название;Место издания;Издательство;Год издания.\n'"
+                   "2. Для статей: “1;Автор(ы);Название статьи;Название источника;Год выпуска;Номер выпуска;Диапазон стр.”\n"
+                   "3. Для URL: “2;Автор(ы);Название статьи;Год публикации;День и месяц прописью;Название ресурса;URL;Дата обращения”.\n"
+                   "Если автор зарубежный, укажите оригинальное написание его имени через “/“."));
 }
 
 void MainWindow::Show_html_popup()
