@@ -71,10 +71,10 @@
    <widget class="QPushButton" name="history_Button">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>40</y>
+      <x>435</x>
+      <y>60</y>
       <width>141</width>
-      <height>41</height>
+      <height>22</height>
      </rect>
     </property>
     <property name="text">
@@ -100,10 +100,10 @@
    <widget class="QPushButton" name="convert_Button">
     <property name="geometry">
      <rect>
-      <x>570</x>
+      <x>576</x>
       <y>60</y>
       <width>141</width>
-      <height>21</height>
+      <height>22</height>
      </rect>
     </property>
     <property name="text">
@@ -139,10 +139,10 @@
    <widget class="QPushButton" name="history_info">
     <property name="geometry">
      <rect>
-      <x>6</x>
-      <y>40</y>
+      <x>420</x>
+      <y>60</y>
       <width>17</width>
-      <height>17</height>
+      <height>22</height>
      </rect>
     </property>
     <property name="text">
