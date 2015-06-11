@@ -11,6 +11,7 @@ ParserSession::ParserSession(QString csvDir, QString htmlDir, QObject *parent) {
     configuration = new Configuration(this);
     csv = new CSVObject(csvDir, configuration, this);
     html = new HTMLObject(htmlDir, this);
+    html->setCSSString(configuration->getCSS());
 }
 
 

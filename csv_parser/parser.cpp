@@ -101,7 +101,7 @@ QString Parser::decoratedList(QVector<QStringList>* sourcesList) {
         QStringList source = sourcesList->at(i);
         QString author = source.at(0);
         QString rest = source.at(1);
-        QString htmlSource = QString("<p><i>%1</i>%2</p>").arg(author, rest);
+        QString htmlSource = QString("<li><i>%1</i>%2</li>").arg(author, rest);
         htmlList.append(htmlSource);
     }
 

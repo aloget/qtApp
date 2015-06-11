@@ -9,10 +9,11 @@ class Configuration : public QObject
     Q_OBJECT
 private:
     QString separator;
-    QString htmlUpperPart;
-    QString htmlLowerPart;
     QVector<Source>* sources;
 
+    QString htmlUpperPart;
+    QString htmlLowerPart;
+    QString css;
 
 public:
     explicit Configuration(QObject *parent = 0);//parse .ini file and init sources array
@@ -28,6 +29,7 @@ public:
     QVector<Source>* getSources() const;
     QString getHTMLUpperPart() const;
     QString getHTMLLowerPart() const;
+    QString getCSS() const;
     QString getSeparator() const;
 
 
