@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>convert</class>
+ <widget class="QDialog" name="convert">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>240</width>
+    <height>138</height>
+   </rect>
+  </property>
+  <property name="cursor">
+   <cursorShape>ArrowCursor</cursorShape>
+  </property>
+  <property name="mouseTracking">
+   <bool>false</bool>
+  </property>
+  <property name="acceptDrops">
+   <bool>false</bool>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="layoutDirection">
+   <enum>Qt::LeftToRight</enum>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>110</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>OK</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>60</y>
+     <width>113</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Успешно!</string>
+   </property>
+   <property name="frame">
+    <bool>false</bool>
+   </property>
+   <property name="echoMode">
+    <enum>QLineEdit::Normal</enum>
+   </property>
+   <property name="cursorPosition">
+    <number>8</number>
+   </property>
+   <property name="dragEnabled">
+    <bool>false</bool>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+   <property name="cursorMoveStyle">
+    <enum>Qt::LogicalMoveStyle</enum>
+   </property>
+   <property name="clearButtonEnabled">
+    <bool>false</bool>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>convert</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>97</x>
+     <y>119</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>47</x>
+     <y>124</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

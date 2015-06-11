@@ -21,7 +21,10 @@ SOURCES += main.cpp\
     htmlobject.cpp \
     source.cpp \
     dbhelper.cpp \
-    sourcepreparator.cpp
+    sourcepreparator.cpp \
+    history.cpp \
+    convert.cpp
+
 
 HEADERS  += mainwindow.h \
     parsersession.h \
@@ -31,6 +34,12 @@ HEADERS  += mainwindow.h \
     htmlobject.h \
     source.h \
     dbhelper.h \
-    sourcepreparator.h
+    sourcepreparator.h \
+    history.h \
+    convert.h
 
-FORMS    += mainwindow.ui
+
+
+FORMS    += mainwindow.ui \
+    history.ui \
+    convert.ui

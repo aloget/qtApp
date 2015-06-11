@@ -17,6 +17,17 @@ public:
 
 private:
     Ui::MainWindow *ui;
+public slots:
+    void Select_csv();
+    void Select_directory();
+    void Show_html_popup();
+    void Show_csv_popup();
+    void Show_history_popup();
+
+private slots:
+    void on_history_Button_clicked();
+    void on_convert_Button_clicked();
 };
+
 
 #endif // MAINWINDOW_H
