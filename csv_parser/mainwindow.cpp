@@ -50,20 +50,25 @@ void MainWindow::on_history_Button_clicked()
 
 void MainWindow::on_convert_Button_clicked()
 {
-    convert Convert;
-    Convert.setModal(true);
+    /*convert Convert;
+    Convert.setModal(true);*/
 
-    QString csvDir = "/Users/anna/Desktop/Untitled.csv";
-    QString htmlDir = "/Users/anna/Desktop/";
+    QString csvDir = ui->select_csv_Edit->text();
+    QString htmlDir = ui->select_directory_Edit->text();
 
     ParserSession* ps = new ParserSession(csvDir, htmlDir);
     if (ps->start()) {
-        qDebug() << "success!";
+        QMessageBox::information(
+                    this,
+                    tr("Успешно"),
+                    tr("Фаил успешно приобразован"));
     } else {
-        qDebug() << "failure!";
+        QMessageBox::information(
+                    this,
+                    tr("Неудача"),
+                    tr("К сожалению, нам не удалось приобразовать ваш фаил"));
     }
 
-    Convert.exec();
 }
 
 void MainWindow::Show_csv_popup()
