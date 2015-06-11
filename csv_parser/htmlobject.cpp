@@ -25,8 +25,8 @@ QString HTMLObject::getHTMLString() const {
 }
 
 bool HTMLObject::writeFile() {
-    QFile htmlFile(QString("%1sources-%2.html").arg(directory, QTime::currentTime().toString()));
-    QFile cssFile(QString("%1sources.css").arg(directory));
+    QFile htmlFile(QString("%1/sources-%2.html").arg(directory, QTime::currentTime().toString()));
+    QFile cssFile(QString("%1/sources.css").arg(directory));
     if (htmlFile.open(QIODevice::WriteOnly) && cssFile.open(QIODevice::ReadWrite | QIODevice::Truncate | QIODevice::Text)) {
         QTextStream hStream(&htmlFile);
         hStream << stringInterpretation;

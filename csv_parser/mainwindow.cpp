@@ -60,13 +60,13 @@ void MainWindow::on_convert_Button_clicked()
     if (ps->start()) {
         QMessageBox::information(
                     this,
-                    tr("Успешно"),
-                    tr("Фаил успешно приобразован"));
+                    tr("Успешно!"),
+                    tr("Файл успешно преобразован."));
     } else {
         QMessageBox::information(
                     this,
-                    tr("Неудача"),
-                    tr("К сожалению, нам не удалось приобразовать ваш фаил"));
+                    tr("Ошибка!"),
+                    tr("К сожалению, нам не удалось преобразовать ваш файл."));
     }
 
 }
