@@ -16,6 +16,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    db = new DBHelper(this);
 
     QObject::connect(ui->select_csv_Button, SIGNAL(clicked()), this, SLOT(Select_csv()));
     QObject::connect(ui->select_directory_Button, SIGNAL(clicked()), this, SLOT(Select_directory()));
@@ -56,7 +57,7 @@ void MainWindow::on_convert_Button_clicked()
     QString csvDir = ui->select_csv_Edit->text();
     QString htmlDir = ui->select_directory_Edit->text();
 
-    ParserSession* ps = new ParserSession(csvDir, htmlDir);
+    ParserSession* ps = new ParserSession(csvDir, htmlDir, db);
     if (ps->start()) {
         QMessageBox::information(
                     this,

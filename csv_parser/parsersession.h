@@ -21,7 +21,7 @@ private:
 
 public:
     explicit ParserSession(QObject *parent = 0);
-    ParserSession(QString csvDir, QString htmlDir, QObject *parent = 0);
+    ParserSession(QString csvDir, QString htmlDir, DBHelper* db, QObject *parent = 0);
 
     bool start(); //implements parsing and returns success/failure
 
