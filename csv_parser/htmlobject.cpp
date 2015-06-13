@@ -9,6 +9,10 @@ HTMLObject::HTMLObject(QObject *parent) : QObject(parent)
 }
 
 HTMLObject::HTMLObject(QString fileDirectory, QObject *parent) {
+    if (fileDirectory.endsWith("/")) {//при сохранении в корень
+        fileDirectory.remove(fileDirectory.length() - 1, 1);
+    }
+
     directory = fileDirectory;
 }
 
@@ -25,7 +29,8 @@ QString HTMLObject::getHTMLString() const {
 }
 
 bool HTMLObject::writeFile() {
-    QFile htmlFile(QString("%1/sources-%2.html").arg(directory, QTime::currentTime().toString()));
+
+    QFile htmlFile(QString("%1/sources-%2.html").arg(directory, QTime::currentTime().toString("hh.mm.ss.zzz")));
     QFile cssFile(QString("%1/sources.css").arg(directory));
     if (htmlFile.open(QIODevice::WriteOnly) && cssFile.open(QIODevice::ReadWrite | QIODevice::Truncate | QIODevice::Text)) {
         QTextStream hStream(&htmlFile);
