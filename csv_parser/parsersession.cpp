@@ -1,5 +1,4 @@
 #include "parsersession.h"
-#include <QDebug>
 #include <QVector>
 #include <QStringList>
 
@@ -20,14 +19,14 @@ ParserSession::ParserSession(QString csvDir, QString htmlDir, QObject *parent) {
 
 
 bool ParserSession::start(){
-    QVector <QStringList> data = db->getData();
-    for (int i = 0; i < data.count(); i++) {
-        QStringList sourceInfo = data.at(i);
-        foreach (QString str, sourceInfo) {
-            qDebug() << str;
-        }
-    }
 
+//    QVector <QStringList> records = db->getData();
+//    for (int i = 0; i < records.count(); i++) {
+//        QStringList record = records.at(i);
+//        foreach (QString oneItem, record) {
+//            qDebug() << oneItem;//"1", "users/Anna/desktop/csvFile.csv", "users/Anna/desktop/htmlFile.html"
+//        }
+//    }
 
     if (csv->getStringInterpretation() == NULL) {
         return false;

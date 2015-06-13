@@ -1,14 +1,13 @@
 #include "dbhelper.h"
-#include <QDebug>
 
 DBHelper::DBHelper(QObject *parent) : QObject(parent)
 {
-    hostname = "localhost";
-    username = "root";
-    password = "mobigear";
+    hostname = "";//localhost
+    username = "";//root
+    password = "";//
 
     if (setupDatabase()) {
-        qDebug() << "DB OK!";
+
     }
 }
 
@@ -20,7 +19,6 @@ bool DBHelper::setupDatabase() {
     db.setPassword(password);
 
     if (!db.open()) {
-        qDebug() << "Cannot open database:" << db.lastError();
         return false;
     }
 
@@ -31,15 +29,14 @@ bool DBHelper::setupDatabase() {
                      ");";
 
     if (!createTableQuery.exec(queryStr)) {
-        qDebug() << "Unable to create a table.";
         return false;
     }
 
-    QString deleteStr = "DELETE FROM fileHistory;";
+//    QString deleteStr = "DELETE FROM fileHistory;";
 
-    if (!createTableQuery.exec(deleteStr)) {
-        qDebug() << "Unable to delete from table.";
-    }
+//    if (!createTableQuery.exec(deleteStr)) {
+//        qDebug() << "Unable to delete from table.";
+//    }
 
 
     return true;
@@ -51,7 +48,6 @@ bool DBHelper::insertValues(QString csvDir, QString htmlDir) {
                            "VALUES('%1', '%2');").arg(csvDir, htmlDir);
 
     if (!insertQuery.exec(insertString)) {
-        qDebug() << "Unable to do insert opeation";
         return false;
     }
     return true;
@@ -62,7 +58,6 @@ QVector <QStringList> DBHelper::getData() {
     QVector<QStringList> records;
 
     if (!selectQuery.exec("SELECT * FROM fileHistory;")) {
-        qDebug() << "Unable to execute query - exiting";
         return records;
     }
 
