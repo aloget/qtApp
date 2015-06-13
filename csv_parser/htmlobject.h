@@ -7,17 +7,22 @@ class HTMLObject : public QObject
 {
     Q_OBJECT
 private:
-    QString directory;
-    QString stringInterpretation;
-    QString cssRelated;
+    QString htmlDirectory;
+    QString cssDirectory;
+
+    QString htmlString;
+    QString cssString;
 
 public:
     explicit HTMLObject(QObject *parent = 0);
     HTMLObject(QString fileDirectory, QObject *parent = 0);
 
     void setCSSString(QString cssString);
-    void setHTMLString(QString htmlString);
+    void setHTMLString(QString htmlString);\
+
     QString getHTMLString() const;
+    QString getHTMLDirectory() const;
+
     bool writeFile();
 signals:
 

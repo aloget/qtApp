@@ -23,6 +23,7 @@ public:
     //otherwise null
 
     QString getStringInterpretation() const;
+    QString getDirectory() const;
 
 signals:
 

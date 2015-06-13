@@ -7,6 +7,7 @@
 #include "csvobject.h"
 #include "htmlobject.h"
 #include "parser.h"
+#include "dbhelper.h"
 
 class ParserSession : public QObject
 {
@@ -16,6 +17,7 @@ private:
     Configuration *configuration;
     CSVObject *csv;
     HTMLObject *html;
+    DBHelper *db;
 
 public:
     explicit ParserSession(QObject *parent = 0);

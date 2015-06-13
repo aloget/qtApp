@@ -19,6 +19,7 @@ CSVObject::CSVObject(QString fileDirectory, Configuration* conf, QObject *parent
         QString maybeCsv = tStream.readAll();
         if (validate(maybeCsv, conf)) {
             stringInterpretation = maybeCsv;
+            directory = fileDirectory;
         }
 
     }
@@ -27,6 +28,10 @@ CSVObject::CSVObject(QString fileDirectory, Configuration* conf, QObject *parent
 QString CSVObject::getStringInterpretation() const {
     return stringInterpretation;
 }
+QString CSVObject::getDirectory() const {
+    return directory;
+}
+
 
 bool CSVObject::validate(QString maybeCsvString, Configuration* conf) {
     if (maybeCsvString.contains(conf->getSeparator())) {
