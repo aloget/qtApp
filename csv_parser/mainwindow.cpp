@@ -45,6 +45,7 @@ void MainWindow::Select_directory()
 void MainWindow::on_history_Button_clicked()
 {
     History history;
+    history.setDB(db);
     history.setModal(true);
     history.exec();
 }

@@ -23,7 +23,7 @@ public:
 
 
     bool insertValues(QString csvDir, QString htmlDir);
-    QVector <QStringList>  getData();
+    QVector <QStringList> getData();
 
 signals:
 
