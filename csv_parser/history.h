@@ -3,6 +3,8 @@
 
 #include <QDialog>
 #include "dbhelper.h"
+#include <QVector>
+#include <QStringList>
 
 namespace Ui {
 class History;
@@ -17,9 +19,9 @@ public:
     ~History();
 
     void setDB(DBHelper* db_);
+    void loadData();
 
 private:
-    void appendString(QString string);
 
     Ui::History *ui;
     DBHelper* db;

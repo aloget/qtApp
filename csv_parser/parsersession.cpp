@@ -20,14 +20,6 @@ ParserSession::ParserSession(QString csvDir, QString htmlDir, DBHelper* db_, QOb
 
 bool ParserSession::start(){
 
-    QVector <QStringList> records = db->getData();
-    for (int i = 0; i < records.count(); i++) {
-        QStringList record = records.at(i);
-        foreach (QString oneItem, record) {
-            qDebug() << oneItem;//"1", "users/Anna/desktop/csvFile.csv", "users/Anna/desktop/htmlFile.html"
-        }
-    }
-
     if (csv->getStringInterpretation() == NULL) {
         return false;
     }

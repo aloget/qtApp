@@ -46,6 +46,8 @@ void MainWindow::on_history_Button_clicked()
 {
     History history;
     history.setDB(db);
+    history.loadData();
+
     history.setModal(true);
     history.exec();
 }
